@@ -3,9 +3,14 @@ import ui.MainMenu;
 
 public class DeliApp {
     public static void main(String[] args) {
-        var model = new OrderModel();
+
         System.out.println("Welcome!!!");
+
+        var model = new OrderModel();
         var root = new MainMenu(model);
-        root.show();
+        root.show(); //will loop indefinitely until 0 exit is chosen
+
+        System.out.println("Thank you for using Deli!");
+
     }
 }

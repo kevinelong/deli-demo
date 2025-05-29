@@ -6,15 +6,22 @@ import java.util.Scanner;
 
 public class SandwichMenu extends BaseMenu {
     Scanner in = new Scanner(System.in);
-    public boolean isValid(String temp){
-        //TODO make real
-        return true;
+
+    public boolean isValid(String temp) {
+        int i = Integer.parseInt(temp);
+        return i >= 0 && i <= 4;
     }
-    public void handleChoice(String choice){
-        //TODO make real
-        return;
+
+    public void handleChoice(String choice) {
+        switch (choice) {
+            case "1" -> (new MeatMenu((OrderModel) model)).show();
+            case "2" -> (new CheeseMenu((OrderModel) model)).show();
+            case "3" -> (new BreadMenu((OrderModel) model)).show();
+            default -> System.out.println("Invalid choice");
+        }
     }
-    public SandwichMenu(OrderModel model){
+
+    public SandwichMenu(OrderModel model) {
         super("""
                 SANDWICH MENU
                 1. add meat
