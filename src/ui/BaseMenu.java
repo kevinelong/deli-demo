@@ -1,3 +1,7 @@
+package ui;
+
+import data.BaseModel;
+
 import java.util.Scanner;
 
 public abstract class BaseMenu {

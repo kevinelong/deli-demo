@@ -1,3 +1,7 @@
+package ui;
+
+import data.OrderModel;
+
 import java.util.Scanner;
 
 public class SandwichMenu extends BaseMenu {

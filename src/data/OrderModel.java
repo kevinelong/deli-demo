@@ -1,6 +1,8 @@
+package data;
+
 import java.util.ArrayList;
 
-public class OrderModel extends BaseModel{
+public class OrderModel extends BaseModel {
     ArrayList<OrderItem> list = new ArrayList<>();
     @Override
     public void save() {
