@@ -4,7 +4,7 @@ public class OrderItem {
     int quantity;
     Product product;
 
-    OrderItem(Product product, int quantity) {
+    public OrderItem(Product product, int quantity) {
         this.product = product;
         this.quantity = quantity;
     }

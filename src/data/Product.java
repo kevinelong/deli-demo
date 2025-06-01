@@ -3,7 +3,7 @@ package data;
 public abstract class Product {
     String name;
     double price;
-    Product(String name, double price){
+    protected Product(String name, double price){
         this.name = name;
         this.price = price;
     }

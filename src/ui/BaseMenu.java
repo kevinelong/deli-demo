@@ -29,17 +29,26 @@ public abstract class BaseMenu implements IViewable, IHoldsValue {
     }
 
     public void render() {
+        //show current data
+        System.out.println(this.model.toString());
+        System.out.println("---");
+        //show menu options
         System.out.println(menuText);
     }
-
+    public void showPrompt(){
+        System.out.print("Enter choice: ");
+    }
+    public String getLine(){
+        return in.nextLine().trim();
+    }
+    public String validate(String temp){
+        return isValid(temp) ? temp : null;
+    }
     public String input() {
         String input = null;
         while (input == null) {
-            System.out.print("Enter choice: ");
-            var temp = in.nextLine().trim();
-            if (isValid(temp)) {
-                input = temp;
-            }
+            showPrompt();
+            input = validate(getLine());
         }
         return input;
     }

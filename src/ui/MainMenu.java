@@ -1,23 +1,14 @@
 package ui;
 
+import data.OrderItem;
+import products.Chips;
 import data.OrderModel;
+import products.Drink;
 
 import java.util.Scanner;
 
 public class MainMenu extends BaseMenu {
     Scanner in = new Scanner(System.in);
-    public boolean isValid(String temp){
-        return true;
-    }
-    public void handleChoice(String choice){
-        switch (choice) {
-            case "1" -> (new SandwichMenu((OrderModel) this.model)).show();
-            case "2" -> (new SandwichMenu((OrderModel) this.model)).show();
-            case "3" -> (new SandwichMenu((OrderModel) this.model)).show();
-            case "4" -> this.model.save();
-            default -> System.out.println("Invalid choice");
-        }
-    }
     public MainMenu(OrderModel model){
         super("""
                 1 add sandwich
@@ -26,5 +17,18 @@ public class MainMenu extends BaseMenu {
                 4 save order
                 0 exit
                 """, model);
+    }
+
+    public boolean isValid(String temp){
+        return true;
+    }
+    public void handleChoice(String choice){
+        switch (choice) {
+            case "1" -> (new SandwichMenu((OrderModel) this.model)).show();
+            case "2" -> this.model.list.add(new OrderItem(new Drink(), 1));
+            case "3" -> this.model.list.add(new OrderItem(new Chips(), 1));
+            case "4" -> this.model.save();
+            default -> System.out.println("Invalid choice");
+        }
     }
 }
